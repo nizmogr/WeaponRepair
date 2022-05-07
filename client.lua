@@ -74,6 +74,6 @@ CreateThread(function ()
     SetBlipColour(blip, 0) -- color
     SetBlipAsShortRange(blip, true)
     BeginTextCommandSetBlipName('STRING')
-    AddTextComponentString('Activity: Dirtbike') -- name that shows on the map
+    AddTextComponentString('Repair Station') -- name that shows on the map
     EndTextCommandSetBlipName(blip)
 end)
