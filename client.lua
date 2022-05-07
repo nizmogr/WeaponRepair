@@ -19,7 +19,8 @@ RegisterNetEvent('WRepair:repairWeapon', function()
     if true then
         lib.callback('WRepair:Cost', false, function(response)
             if response then
-                --[[
+               -- Uncomment this if you plan on adding the item check back. *shrug*
+                --[[ 
                 lib.notify({
                     title = 'Error',
                     description = 'You are missing a Weapon Kit!',
@@ -69,7 +70,7 @@ local repairguy = `a_f_m_prolhost_01`
 -- Map blip
 CreateThread(function ()
     blip = AddBlipForCoord(231.6, -1094.99) -- x & y coordinates
-    SetBlipSprite(blip, 661) --  icon 
+    SetBlipSprite(blip, 110) --  icon 
     SetBlipScale(blip, 0.7) -- size
     SetBlipColour(blip, 0) -- color
     SetBlipAsShortRange(blip, true)
