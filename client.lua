@@ -7,7 +7,7 @@ local function openContext()
         title = 'Repair Weapon',
         options = {
             ['Do you wish to repair your weapon?'] = {
-                description = 'Cost: $1000',
+                description = 'Yes',
                 event = 'WRepair:repairWeapon'
             }
         }
