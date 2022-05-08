@@ -2,7 +2,7 @@
 WeaponRepair for Ox_inventory
 I did nothing realy, just used some exports from ox_inventory and esx_menu, what the script does is to draw the weapons player has on his inventory and repair the weapon that the player choose needing an item to repair it. You can set coords for as many locations you want.
 
-Of course you can change anything you like and feel free to tell me for any problems. My coding sucks so please tell me what I could have done anything better.
+Of course you can change anything you like and feel free to tell me for any problems. My coding sucks so please tell me what I could have done better.
 
 Requirements
 esx framework (tested on 1.6)
