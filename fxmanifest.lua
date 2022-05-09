@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 lua54 'yes'
 game 'gta5'
-version '0.1'
+version '1.1'
 
 author 'Nizmogr'
 description 'Weapon Repair Tables'
