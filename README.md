@@ -12,3 +12,5 @@ esx framework (tested on 1.6)
 Ox_inventory 2.8.3 or later (https://github.com/overextended/ox_inventory/releases/tag/v2.8.3)
 
 ox_lib 2.2.1 or later (https://github.com/overextended/ox_lib/releases/tag/v2.2.1)
+
+qtarget 2.1.5 or later (https://github.com/overextended/qtarget)
