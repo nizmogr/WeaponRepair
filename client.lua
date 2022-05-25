@@ -86,6 +86,7 @@ CreateThread(function()
         local ped = CreatePed(4, Config.PedModel, Config.Peds[i].x, Config.Peds[i].y, Config.Peds[i].z - 1, Config.Peds[i].w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
+        SetBlockingOfNonTemporaryEvents(ped, true)
         exports.qtarget:AddTargetEntity(ped, {
             options = {
                 {
