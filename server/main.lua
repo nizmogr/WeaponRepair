@@ -8,3 +8,16 @@ AddEventHandler('WRepair:Cost', function(data)
     ox_inventory:RemoveItem(source, 'repairkit_weapon', 1) --You can change 'repairkit_weapon' to whatever item you want to remove as payment
     ox_inventory:SetDurability(source, weapon.slot, 100)
 end)
+
+ESX.RegisterUsableItem('selfrepairkit_weapon', function(source)
+    TriggerClientEvent('WRepair:openContext', source)
+end)
+
+RegisterNetEvent('WRepair:repairWeaponItem')
+AddEventHandler('WRepair:repairWeaponItem', function(data)
+    local curweapon = data.selweapon
+    local weapon = ox_inventory:Search(source, 'slots', curweapon)
+    weapon = weapon[1]
+    ox_inventory:RemoveItem(source, 'selfrepairkit_weapon', 1)
+	ox_inventory:SetDurability(source, weapon.slot, 100)
+end)
