@@ -26,6 +26,34 @@ function openContext()
     lib.showContext('weapon_menu')
 end
 
+function openContextItem()
+    local inventory = ox_inventory:Search('count', weapons)
+    local options = {}
+    if inventory then
+        for name, count in pairs(inventory) do
+            if count >= 1 then
+                local curweapon = name
+                local weapon = ESX.GetWeaponLabel(curweapon)
+                options[weapon] = {
+                    event = 'WRepair:repairWeaponItem',
+                    args = {selweapon = curweapon}
+                }
+            end
+        end
+    end
+
+    lib.registerContext({
+        id = 'weapon_menu',
+        title = 'Repair Weapon',
+        options = options
+    })
+    lib.showContext('weapon_menu')
+end
+
+RegisterNetEvent('WRepair:openContext', function(data)
+    openContextItem()
+end)
+
 RegisterNetEvent('WRepair:repairWeapon', function(data)
     local rcount = ox_inventory:Search('count', 'repairkit_weapon')
     if rcount > 0 then
@@ -65,6 +93,38 @@ Config = {
         --vector4(487.3318, -996.91, 30.67834, 89.514),     --Example at mrpd
     }
 }
+
+RegisterNetEvent('WRepair:repairWeaponItem', function(data)
+    local rcount = ox_inventory:Search('count', 'selfrepairkit_weapon')
+    if rcount > 0 then
+        TriggerServerEvent('WRepair:repairWeaponItem', data)
+                lib.notify({
+                    title = 'Success',
+                    description = 'You have repaired your weapon!',
+                    position = 'top',
+                    duration = 3500,
+                    style = {
+                        backgroundColor = 'darkseagreen',
+                        color = 'white'
+                    },
+                    icon = 'gun',
+                    iconColor = 'white'
+                })       
+    else
+        lib.notify({
+            title = 'Error',
+            description = 'You have repaired your weapon!',
+            position = 'top',
+            duration = 3500,
+            style = {
+                backgroundColor = 'lightcoral',
+                color = 'white'
+            },
+            icon = 'gun',
+            iconColor = 'white'
+        })
+    end
+end)
 
 CreateThread(function()
     for i=1, #Config.Peds, 1 do
