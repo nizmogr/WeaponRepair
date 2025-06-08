@@ -113,7 +113,7 @@ RegisterNetEvent('WRepair:repairWeaponItem', function(data)
     else
         lib.notify({
             title = 'Error',
-            description = 'You have repaired your weapon!',
+            description = 'You are missing a Self Weapon Kit!',
             position = 'top',
             duration = 3500,
             style = {
@@ -129,7 +129,7 @@ end)
 CreateThread(function()
     for i=1, #Config.Peds, 1 do
         -- Blip
-        local blip = AddBlipForCoord(Config.Peds[i].x, Config.Peds[i].y)
+        local blip = AddBlipForCoord(Config.Peds[i].x, Config.Peds[i].y, Config.Peds[i].z)
         SetBlipSprite(blip, 110)
         SetBlipScale(blip, 0.7)
         SetBlipColour(blip, 0)
